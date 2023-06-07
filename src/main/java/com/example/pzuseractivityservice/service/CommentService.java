@@ -23,6 +23,7 @@ public class CommentService {
         Comment comment = commentRepository.findById(id).orElse(null);
         if(comment == null) return null;
         comment.setContent(c.getContent());
+        comment.setAuthorId(c.getAuthorId());
         commentRepository.save(comment);
         return comment;
     }
@@ -33,5 +34,8 @@ public class CommentService {
 
     public List<Comment> getAll(UUID articleId){
         return commentRepository.findAllByArticleId(articleId);
+    }
+    public List<Comment> getAllForUser(UUID userId){
+        return commentRepository.findAllByAuthorId(userId);
     }
 }

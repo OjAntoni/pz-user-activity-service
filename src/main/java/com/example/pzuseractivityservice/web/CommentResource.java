@@ -24,6 +24,11 @@ public class CommentResource {
         List<Comment> all = commentService.getAll(postId);
         return ResponseEntity.ok(all);
     }
+    @GetMapping("/all")
+    public ResponseEntity<?> getCommentsForUser(@RequestParam UUID userId){
+        List<Comment> all = commentService.getAllForUser(userId);
+        return ResponseEntity.ok(all);
+    }
 
     @PostMapping
     public ResponseEntity<?> saveNewComment(@RequestBody CommentDto dto){
