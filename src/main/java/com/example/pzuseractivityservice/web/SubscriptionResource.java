@@ -38,4 +38,9 @@ public class SubscriptionResource {
         subscriptionService.delete(id);
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getById(@PathVariable UUID id){
+        return new ResponseEntity<>(subscriptionService.getById(id), HttpStatus.OK);
+    }
 }

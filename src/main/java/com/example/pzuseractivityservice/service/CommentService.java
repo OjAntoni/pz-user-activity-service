@@ -38,4 +38,8 @@ public class CommentService {
     public List<Comment> getAllForUser(UUID userId){
         return commentRepository.findAllByAuthorId(userId);
     }
+
+    public Comment getById(UUID id){
+        return commentRepository.findById(id).orElse(null);
+    }
 }

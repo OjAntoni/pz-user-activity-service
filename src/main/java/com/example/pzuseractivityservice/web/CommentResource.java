@@ -48,4 +48,9 @@ public class CommentResource {
         return new ResponseEntity<>(HttpStatus.ACCEPTED);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getById(@PathVariable UUID id){
+        return new ResponseEntity<>(commentService.getById(id), HttpStatus.OK);
+    }
+
 }

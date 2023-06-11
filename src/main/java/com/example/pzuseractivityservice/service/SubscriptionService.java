@@ -24,4 +24,8 @@ public class SubscriptionService {
     public List<Subscription> getAll(UUID userId){
         return subscriptionRepository.findAllByUserId(userId);
     }
+
+    public Subscription getById(UUID id){
+        return subscriptionRepository.findById(id).orElse(null);
+    }
 }
