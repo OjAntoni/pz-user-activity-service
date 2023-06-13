@@ -14,6 +14,9 @@ public class SubscriptionService {
     private SubscriptionRepository subscriptionRepository;
 
     public Subscription save(Subscription c){
+        if(subscriptionRepository.existsByTopicIdAndUserId(c.getTopicId(), c.getUserId())){
+            c.setId(subscriptionRepository.findByTopicIdAndUserId(c.getTopicId(), c.getUserId()).getId());
+        }
         return subscriptionRepository.save(c);
     }
 
@@ -27,5 +30,9 @@ public class SubscriptionService {
 
     public Subscription getById(UUID id){
         return subscriptionRepository.findById(id).orElse(null);
+    }
+
+    public List<Subscription> getAllByTopic(UUID topicId){
+        return subscriptionRepository.findAllByTopicId(topicId);
     }
 }

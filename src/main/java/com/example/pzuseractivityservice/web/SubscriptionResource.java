@@ -43,4 +43,9 @@ public class SubscriptionResource {
     public ResponseEntity<?> getById(@PathVariable UUID id){
         return new ResponseEntity<>(subscriptionService.getById(id), HttpStatus.OK);
     }
+
+    @GetMapping("/all")
+    public ResponseEntity<?> getByTopicId(@RequestParam UUID topicId){
+        return new ResponseEntity<>(subscriptionService.getAllByTopic(topicId), HttpStatus.OK);
+    }
 }
