@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class PzUserActivityServiceApplicationTests {
 
     @Test
-    void contextLoadss() {
+    void contextLoads() {
     }
 
 }
