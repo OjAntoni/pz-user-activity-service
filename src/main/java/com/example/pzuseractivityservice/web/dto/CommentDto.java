@@ -13,8 +13,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CommentDto {
-    @NotNull
-    private UUID authorId;
+    private long authorId;
     @NotNull
     @NotBlank
     @NotEmpty

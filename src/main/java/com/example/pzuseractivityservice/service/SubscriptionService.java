@@ -24,7 +24,7 @@ public class SubscriptionService {
         subscriptionRepository.deleteById(id);
     }
 
-    public List<Subscription> getAll(UUID userId){
+    public List<Subscription> getAll(long userId){
         return subscriptionRepository.findAllByUserId(userId);
     }
 

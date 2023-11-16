@@ -21,7 +21,7 @@ public class SubscriptionResource {
 
 
     @GetMapping
-    public ResponseEntity<?> getSubsForUser(@RequestParam UUID userId){
+    public ResponseEntity<?> getSubsForUser(@RequestParam long userId){
         List<Subscription> all = subscriptionService.getAll(userId);
         return new ResponseEntity<>(all, HttpStatus.OK);
     }

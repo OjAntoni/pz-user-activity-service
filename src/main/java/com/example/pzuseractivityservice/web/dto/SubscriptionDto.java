@@ -12,7 +12,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class SubscriptionDto {
     @NotNull
-    private UUID userId;
+    private long userId;
     @NotNull
     private UUID topicId;
 }

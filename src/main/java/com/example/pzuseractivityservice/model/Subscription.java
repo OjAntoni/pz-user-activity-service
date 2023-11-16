@@ -18,6 +18,6 @@ public class Subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
-    private UUID userId;
+    private long userId;
     private UUID topicId;
 }

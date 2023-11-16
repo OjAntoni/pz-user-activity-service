@@ -35,7 +35,7 @@ public class CommentService {
     public List<Comment> getAll(UUID articleId){
         return commentRepository.findAllByArticleId(articleId);
     }
-    public List<Comment> getAllForUser(UUID userId){
+    public List<Comment> getAllForUser(long userId){
         return commentRepository.findAllByAuthorId(userId);
     }
 

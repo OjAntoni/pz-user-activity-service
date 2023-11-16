@@ -7,9 +7,9 @@ import java.util.List;
 import java.util.UUID;
 
 public interface SubscriptionRepository extends JpaRepository<Subscription, UUID> {
-    List<Subscription> findAllByUserId(UUID id);
+    List<Subscription> findAllByUserId(long id);
     List<Subscription> findAllByTopicId(UUID id);
 
-    boolean existsByTopicIdAndUserId(UUID topic, UUID user);
-    Subscription findByTopicIdAndUserId(UUID topic, UUID user);
+    boolean existsByTopicIdAndUserId(UUID topic, long user);
+    Subscription findByTopicIdAndUserId(UUID topic, long user);
 }

@@ -21,7 +21,7 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
     private LocalDateTime createdAt;
-    private UUID authorId;
+    private long authorId;
     private String content;
     private UUID articleId;
 

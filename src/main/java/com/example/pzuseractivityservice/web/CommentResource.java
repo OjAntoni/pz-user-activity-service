@@ -25,7 +25,7 @@ public class CommentResource {
         return ResponseEntity.ok(all);
     }
     @GetMapping("/all")
-    public ResponseEntity<?> getCommentsForUser(@RequestParam UUID userId){
+    public ResponseEntity<?> getCommentsForUser(@RequestParam long userId){
         List<Comment> all = commentService.getAllForUser(userId);
         return ResponseEntity.ok(all);
     }
